@@ -1,0 +1,10 @@
+54. Punctuation Pattern Classification
+Problem Statement:
+Investigate whether punctuation patterns can distinguish different writing categories.
+Features:
+•	Commas 
+•	Semicolons 
+•	Colons 
+•	Question marks 
+•	Exclamation marks 
+•	Parentheses

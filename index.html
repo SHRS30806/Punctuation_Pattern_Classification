@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punctuation Classifier</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Punctuation Classifier</h1>
+      <p>Paste text below to see punctuation frequencies and predicted category.</p>
+    </header>
+
+    <main>
+      <form id="classify-form">
+        <div class="form-group">
+          <label for="text-input">Input Text</label>
+          <textarea id="text-input" rows="8" placeholder="Paste your text here..."></textarea>
+          <div class="text-counts">
+            <span id="char-count">0 characters</span>
+            <span id="word-count">0 words</span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button type="button" id="clear-btn" class="btn btn-secondary">Clear</button>
+          <button type="submit" id="submit-btn" class="btn btn-primary">Classify</button>
+        </div>
+      </form>
+
+      <div id="error-message" class="error-box" style="display: none;"></div>
+
+      <section id="results" class="results-box" style="display: none;">
+        <h2>Results</h2>
+        <div class="result-summary">
+          <div class="summary-item">
+            <span class="label">Predicted Category</span>
+            <span id="predicted-category" class="value category-badge"></span>
+          </div>
+          <div class="summary-item">
+            <span class="label">Total Words</span>
+            <span id="res-word-count" class="value"></span>
+          </div>
+          <div class="summary-item">
+            <span class="label">Total Punctuation Marks</span>
+            <span id="res-punct-count" class="value"></span>
+          </div>
+        </div>
+
+        <h3>Punctuation Breakdown</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Mark</th>
+              <th>Count</th>
+              <th>Per 100 Words</th>
+            </tr>
+          </thead>
+          <tbody id="features-table-body">
+            <!-- Populated dynamically -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
